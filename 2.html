@@ -1,0 +1,53 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pregunta de Sí o No</title>
+    <style>
+        body {
+            background-color: #1E90FF; /* Azul oscuro */
+            color: #FFFFFF; /* Texto blanco */
+            font-family: Arial, sans-serif;
+        }
+        button {
+            background-color: #FFFFFF; /* Fondo blanco para botones */
+            color: #1E90FF; /* Texto azul oscuro para botones */
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #1E90FF; /* Fondo azul oscuro cuando se pasa el mouse */
+            color: #FFFFFF; /* Texto blanco cuando se pasa el mouse */
+        }
+        #mensajeRespuesta {
+            font-style: italic; /* Texto en cursiva */
+        }
+    </style>
+</head>
+<body>
+    <h1>¿Aceptarías casarte conmigo?</h1>
+    <button onclick="responder('no')">No</button>
+    <button onclick="responder('si')">Sí</button>
+    <p id="mensajeRespuesta"></p>
+    <p>Para quejas y reclamos, por favor llama al <a href="tel:+573229351700" target="_blank">322 935 1700</a>.</p>
+
+    <script>
+        function responder(respuesta) {
+            if (respuesta === 'no') {
+                document.getElementById("mensajeRespuesta").innerText = "Gracias por tu respuesta. Respeto tu decisión.";
+                document.getElementsByTagName("button")[0].disabled = true;
+                document.getElementsByTagName("button")[1].disabled = true;
+            } else if (respuesta === 'si') {
+                document.getElementById("mensajeRespuesta").innerText = "¡Gracias! Sé que no te arrepentirás.";
+                document.getElementsByTagName("button")[0].disabled = true;
+                document.getElementsByTagName("button")[1].disabled = true;
+
+                // Redireccionar a la página con el poema
+                window.location.href = "poema.html";
+            }
+        }
+    </script>
+</body>
+</html>
